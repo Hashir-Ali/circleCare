@@ -28,6 +28,7 @@ import AddReflection from './components/home/add-daily-reflection';
 import DailyReflections from './components/home/daily-reflection';
 import RecordsAndProgress from './components/home/records-and-progress';
 import RecordsAndGraphs from './components/home/RecordsAndGraphs';
+import recordProgress_1 from './screens/RecordAndProgress/recordProgress_1';
 
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
@@ -88,10 +89,15 @@ function App(): JSX.Element {
           component={ReadArticle}
         />
         {/* <Stack.Screen options={{headerShown: false}} name='recordAndProgress' component={RecordsAndProgress}/> */}
-        <Stack.Screen
+        {/* <Stack.Screen
           options={{headerShown: false}}
           name="recordAndProgress"
           component={RecordsAndGraphs}
+        /> */}
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="recordAndProgress"
+          component={recordProgress_1}
         />
 
         <Stack.Screen
