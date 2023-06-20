@@ -36,6 +36,7 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        initialRouteName="recordAndProgress"
         screenOptions={{
           // headerShown: false,
           headerTintColor: '#2791B5',
@@ -89,11 +90,11 @@ function App(): JSX.Element {
           component={ReadArticle}
         />
         {/* <Stack.Screen options={{headerShown: false}} name='recordAndProgress' component={RecordsAndProgress}/> */}
-        {/* <Stack.Screen
+        <Stack.Screen
           options={{headerShown: false}}
-          name="recordAndProgress"
+          name="recordAndGraph"
           component={RecordsAndGraphs}
-        /> */}
+        />
         <Stack.Screen
           options={{headerShown: false}}
           name="recordAndProgress"

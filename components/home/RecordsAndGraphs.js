@@ -148,16 +148,60 @@ const RecordsAndGraphs = ({navigation}) => {
                     <Grid />
                   </AreaChart>
                 </View>
-
-                {/* <Pressable style={styles.saveButton}>
-                  <ImageBackground
-                    source={require('../../assets/Buttons.png')}
-                    resizeMode="cover"
-                    style={styles.saveButtonImage}>
-                    <Text style={styles.saveButtonText}>Save</Text>
-                  </ImageBackground>
-                </Pressable> */}
               </View>
+            </View>
+
+            <View style={{flexDirection: 'row', marginBottom: 210}}>
+              <Text style={{color: 'gray'}}>Mon</Text>
+
+              <Text
+                style={{
+                  color: 'gray',
+                  marginLeft: 'auto',
+                  fontWeight: 'bold',
+                }}>
+                Tue
+              </Text>
+              <Text
+                style={{
+                  color: 'gray',
+                  marginLeft: 'auto',
+                  fontWeight: 'bold',
+                }}>
+                Wed
+              </Text>
+              <Text
+                style={{
+                  color: 'gray',
+                  marginLeft: 'auto',
+                  fontWeight: 'bold',
+                }}>
+                Thu
+              </Text>
+              <Text
+                style={{
+                  color: 'gray',
+                  marginLeft: 'auto',
+                  fontWeight: 'bold',
+                }}>
+                Fri
+              </Text>
+              <Text
+                style={{
+                  color: 'gray',
+                  marginLeft: 'auto',
+                  fontWeight: 'bold',
+                }}>
+                Sat
+              </Text>
+              <Text
+                style={{
+                  color: 'gray',
+                  marginLeft: 'auto',
+                  fontWeight: 'bold',
+                }}>
+                Sun
+              </Text>
             </View>
 
             <Pressable style={styles.saveButton}>
