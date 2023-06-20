@@ -73,7 +73,6 @@ export default function recordProgress_1() {
         />
         {selectedIndex === 0 ? (
           <>
-            {/* Pain Analogue option picker */}
             <DropDownPicker
               open={open}
               value={value}
@@ -93,7 +92,6 @@ export default function recordProgress_1() {
                 fontSize: 2,
               }}
             />
-            {/* Update Blood Pressure (Systole) input number box */}
             <TextInput
               label="Update Blood Pressure (Systole)"
               value={Text}
@@ -140,11 +138,28 @@ export default function recordProgress_1() {
               }}
               mode="contained"
               onPress={() => navigation.navigate('recordAndGraph')}>
-              check graph screen
+              check Next screen
             </Button>
           </>
         ) : (
-          <></>
+          <>
+            <Button
+              style={{
+                marginTop: 20,
+                borderRadius: 20,
+                height: 40,
+                width: 250,
+                alignSelf: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#BF6BBB',
+                color: '#f3f3f3',
+                fontSize: 2,
+              }}
+              mode="contained"
+              onPress={() => navigation.navigate('recordAndGraph')}>
+              check Next screen
+            </Button>
+          </>
         )}
       </View>
     </View>

@@ -35,6 +35,18 @@ const style = StyleSheet.create({
     backgroundColor: '#f3f3f3',
     fontSize: 18,
   },
+  Circlecontainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  circle: {
+    width: 150,
+    height: 150,
+    borderRadius: 75,
+    backgroundColor: 'blue',
+    marginVertical: 10,
+  },
 });
 
 export default style;

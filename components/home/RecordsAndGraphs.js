@@ -7,15 +7,19 @@ import {
   View,
   ImageBackground,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import {ButtonGroup} from 'react-native-elements';
 import {AreaChart, Grid} from 'react-native-svg-charts';
 import * as shape from 'd3-shape';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import {RadioButton} from 'react-native-paper';
 
 const data = [50, 10, 40, 95, 85, 65, 75, 55, 70, 80, 30, 45];
 
 const RecordsAndGraphs = ({navigation}) => {
+  const [checked, setChecked] = React.useState('first');
+
   // for button groups.
   const [selectedIndex, changeSelectedIndex] = useState(0);
   const buttons = ['My Records', 'Show Report'];
@@ -101,7 +105,7 @@ const RecordsAndGraphs = ({navigation}) => {
                   </Text>
                 </View>
 
-                <View style={{flexDirection: 'row'}}>
+                <View style={{flexDirection: 'row', marginTop: 20}}>
                   <Text style={{color: 'gray'}}> 12/12/2020</Text>
                   <AntDesign
                     style={{color: 'gray', marginLeft: 'auto'}}
@@ -124,7 +128,7 @@ const RecordsAndGraphs = ({navigation}) => {
                     data={data}
                     contentInset={{top: 30, bottom: 30}}
                     curve={shape.curveNatural}
-                    svg={{fill: 'rgba(136, 123, 244, 0.8)'}}>
+                    svg={{fill: '#8853A7'}}>
                     <Grid />
                   </AreaChart>
                 </View>
@@ -144,66 +148,92 @@ const RecordsAndGraphs = ({navigation}) => {
                     data={data}
                     contentInset={{top: 30, bottom: 30}}
                     curve={shape.curveNatural}
-                    svg={{fill: 'rgba(255, 0, 25, 0.8)'}}>
+                    svg={{fill: '#F469AC'}}>
                     <Grid />
                   </AreaChart>
                 </View>
               </View>
             </View>
 
-            <View style={{flexDirection: 'row', marginBottom: 210}}>
-              <Text style={{color: 'gray'}}>Mon</Text>
+            <View style={{flexDirection: 'column', marginVertical: 140}}>
+              <View style={{flexDirection: 'row'}}>
+                <Text style={{color: 'gray'}}>Mon</Text>
 
-              <Text
+                <Text
+                  style={{
+                    color: 'gray',
+                    marginLeft: 'auto',
+                    fontWeight: 'bold',
+                  }}>
+                  Tue
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    marginLeft: 'auto',
+                    fontWeight: 'bold',
+                  }}>
+                  Wed
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    marginLeft: 'auto',
+                    fontWeight: 'bold',
+                  }}>
+                  Thu
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    marginLeft: 'auto',
+                    fontWeight: 'bold',
+                  }}>
+                  Fri
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    marginLeft: 'auto',
+                    fontWeight: 'bold',
+                  }}>
+                  Sat
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    marginLeft: 'auto',
+                    fontWeight: 'bold',
+                  }}>
+                  Sun
+                </Text>
+              </View>
+
+              <View
                 style={{
-                  color: 'gray',
-                  marginLeft: 'auto',
-                  fontWeight: 'bold',
+                  flexDirection: 'row',
+                  marginTop: 20,
+                  justifyContent: 'space-evenly',
+                  alignItems: 'center',
                 }}>
-                Tue
-              </Text>
-              <Text
-                style={{
-                  color: 'gray',
-                  marginLeft: 'auto',
-                  fontWeight: 'bold',
-                }}>
-                Wed
-              </Text>
-              <Text
-                style={{
-                  color: 'gray',
-                  marginLeft: 'auto',
-                  fontWeight: 'bold',
-                }}>
-                Thu
-              </Text>
-              <Text
-                style={{
-                  color: 'gray',
-                  marginLeft: 'auto',
-                  fontWeight: 'bold',
-                }}>
-                Fri
-              </Text>
-              <Text
-                style={{
-                  color: 'gray',
-                  marginLeft: 'auto',
-                  fontWeight: 'bold',
-                }}>
-                Sat
-              </Text>
-              <Text
-                style={{
-                  color: 'gray',
-                  marginLeft: 'auto',
-                  fontWeight: 'bold',
-                }}>
-                Sun
-              </Text>
+                <RadioButton
+                  color="red"
+                  value="first"
+                  status={checked === 'first' ? 'checked' : 'unchecked'}
+                  onPress={() => setChecked('first')}
+                />
+                <Text style={{color: 'red', fontWeight: 'bold'}}>Diastole</Text>
+                <RadioButton
+                  color="red"
+                  value="second"
+                  status={checked === 'second' ? 'checked' : 'unchecked'}
+                  onPress={() => setChecked('second')}
+                />
+                <Text style={{color: 'red', fontWeight: 'bold'}}> Systole</Text>
+              </View>
             </View>
 
+            {/* <Text style={{color: 'gray'}}> 12/12/2020</Text> */}
             <Pressable style={styles.saveButton}>
               <ImageBackground
                 source={require('../../assets/Buttons.png')}
